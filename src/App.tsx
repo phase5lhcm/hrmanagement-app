@@ -10,10 +10,8 @@ import routerBindings, {
   UnsavedChangesNotifier,
 } from "@refinedev/react-router-v6";
 import { App as AntdApp } from "antd";
-import axios from "axios";
-import { createClient } from "graphql-ws";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { dataProvider, liveProvider } from "./providers";
+import { dataProvider, liveProvider, authProvider } from "./providers";
 
 const API_URL = "https://api.nestjs-query.refine.dev/graphql";
 const WS_URL = "wss://api.nestjs-query.refine.dev/graphql";
@@ -36,7 +34,7 @@ function App() {
               liveProvider={liveProvider}
               notificationProvider={useNotificationProvider}
               routerProvider={routerBindings}
-              // authProvider={}
+              authProvider={authProvider}
               options={{
                 syncWithLocation: true,
                 warnWhenUnsavedChanges: true,
