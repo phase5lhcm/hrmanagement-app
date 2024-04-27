@@ -1,6 +1,6 @@
 import { AuthPage } from "@refinedev/antd";
 
-export const LoginPage = () => {
+export const Register = () => {
   // Handle form submission
   const handleSubmit = (values) => {
     console.log("Form values:", values);
