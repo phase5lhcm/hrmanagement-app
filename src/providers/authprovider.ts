@@ -4,6 +4,11 @@ import { User } from "@/graphql/schema.types";
 
 import { API_URL, dataProvider } from "./data";
 
+export const authCredentials = {
+  email: "michael.scott@dundermifflin.com",
+  password: "demodemo",
+};
+
 export const authProvider: AuthProvider = {
   login: async ({ email }) => {
     try {
@@ -60,6 +65,7 @@ export const authProvider: AuthProvider = {
 
     return { error };
   },
+  // to verify if the user is indeed authenticated
   check: async () => {
     try {
       await dataProvider.custom({
