@@ -1,9 +1,4 @@
-import {
-  Authenticated,
-  GitHubBanner,
-  Refine,
-  WelcomePage,
-} from "@refinedev/core";
+import { Authenticated, GitHubBanner, Refine } from "@refinedev/core";
 import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 
@@ -16,13 +11,10 @@ import routerBindings, {
   UnsavedChangesNotifier,
 } from "@refinedev/react-router-v6";
 import { App as AntdApp } from "antd";
-import Layout from "./layout";
+import Layout from "./components/layout";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { dataProvider, liveProvider, authProvider } from "./providers";
 import { Home, ForgotPassword, Register, Login } from "./pages";
-
-const API_URL = "https://api.nestjs-query.refine.dev/graphql";
-const WS_URL = "wss://api.nestjs-query.refine.dev/graphql";
 
 function App() {
   const { isLoading, user, logout, getIdTokenClaims } = useAuth0();
